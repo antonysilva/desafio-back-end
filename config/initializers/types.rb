@@ -1,0 +1,1 @@
+ActiveRecord::Type.register(:valid_string, ValidString)
