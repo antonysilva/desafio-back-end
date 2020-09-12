@@ -9,12 +9,12 @@ Esta é uma aplicação Rails cuja funcionalidade é permitir que o usuário pos
 ### This application was developed using:
 * `ruby 2.7.1`;
 * `Rails 6.0.3`;
-* `PostgreSQL 11.2`;
+* `PostgreSQL 12.4`;
 
 ### Running the application:
 * clone this project;
 * run the command `bundle install`;
-* make the initial configuration of the database through the commands: `rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare`;
+* make the initial configuration of the database through the commands: `rake db:drop && rake db:create && rake db:migrate && rake db:seed && rake db:test:prepare`;
 * create a `.env.development` file similar to `.env.example` and add the credentials of your facebook application;
 * run the `rspec` command to run the test suite;
 * run the `rails s` command to start the application server;
