@@ -1,9 +1,7 @@
-div class='container'
- 
-  h1 Transacrion By Store List
+h1 Transacrion By Store List
 
-  p Store: #{@store.name}
-  p Owner: #{@store.owner}
-  p.total-amount Total: #{@store.total_amount}
+p Store: #{@store.name}
+p Owner: #{@store.owner}
+p.total-amount Total: #{@store.total_amount}
 
-  = render partial: "list", locals: {financial_transactions: @store.financial_transactions}
+= render partial: "list", locals: {financial_transactions: @store.financial_transactions}

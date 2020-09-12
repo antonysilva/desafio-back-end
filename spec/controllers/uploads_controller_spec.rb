@@ -21,5 +21,20 @@ RSpec.describe UploadsController, type: :controller do
     end
   end
 
+  describe "Uploads Request" do
+    before { sign_in user }
+    let!(:transaction_type) { create(:transaction_type) }
+
+    subject do
+      post :create, :params => { 
+        file: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/assets/files/CNAB.txt'))
+      }
+    end
+
+    it "#Saved File" do
+      expect{subject}.to change(FinancialTransaction, :count)
+    end
+
+  end
 
 end

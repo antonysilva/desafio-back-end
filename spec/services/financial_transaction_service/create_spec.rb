@@ -5,18 +5,7 @@ RSpec.describe FinancialTransactionService::Create do
 
         context "Should not save empty file" do 
             subject do
-                ::TransactionType.create([
-                    {id: 1, name: "Débito", signal: "+"},
-                    {id: 2, name: "Boleto", signal: "-"},
-                    {id: 3, name: "Financiamento", signal: "-"},
-                    {id: 4, name: "Crédito", signal: "+"},
-                    {id: 5, name: "Recebimento Empréstimo", signal: "+"},
-                    {id: 6, name: "Vendas", signal: "+"},
-                    {id: 7, name: "Recebimento TED", signal: "+"},
-                    {id: 8, name: "Recebimento DOC", signal: "+"},
-                    {id: 9, name: "Aluguel", signal: "-"}
-                ]) 
-
+                create(:transaction_type)
                 parsed_file = Parse::Files::ParseFile.new(File.new(Rails.root.join('spec/assets/files/BLANK_CNAB.txt')), Parse::Models::CnabModel.get).parse
                 described_class.new(parsed_file).execute
             end
@@ -29,18 +18,7 @@ RSpec.describe FinancialTransactionService::Create do
         
         context "Should save file not error" do 
             subject do
-                ::TransactionType.create([
-                    {id: 1, name: "Débito", signal: "+"},
-                    {id: 2, name: "Boleto", signal: "-"},
-                    {id: 3, name: "Financiamento", signal: "-"},
-                    {id: 4, name: "Crédito", signal: "+"},
-                    {id: 5, name: "Recebimento Empréstimo", signal: "+"},
-                    {id: 6, name: "Vendas", signal: "+"},
-                    {id: 7, name: "Recebimento TED", signal: "+"},
-                    {id: 8, name: "Recebimento DOC", signal: "+"},
-                    {id: 9, name: "Aluguel", signal: "-"}
-                ]) 
-
+                create(:transaction_type)
                 parsed_file = Parse::Files::ParseFile.new(File.new(Rails.root.join('spec/assets/files/CNAB.txt')), Parse::Models::CnabModel.get).parse
                 described_class.new(parsed_file).execute
             end

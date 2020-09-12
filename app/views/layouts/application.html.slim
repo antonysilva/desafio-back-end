@@ -9,10 +9,16 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
  
   body
-    p class="notice" 
-      = notice
-    p class="alert" 
-      = alert
-      
-    == yield
+    div.header
+      h2.header-item Desafio Backend Rails Antony Silva
+      div class="#{signed_in? ? 'show' : 'hidden'} header-item"
+        span.sign-out = link_to('Sign out', destroy_user_session_path, method: :delete)
+        
+    div.container
+      p.notice 
+        = notice
+      p.alert 
+        = alert
+    
+      == yield
  
