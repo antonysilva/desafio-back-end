@@ -1,4 +1,4 @@
-table class='table table-condensed'
+table cellspacing="0px" cellpadding="0px"
   thead
     tr
       th Nome Loja
@@ -9,6 +9,7 @@ table class='table table-condensed'
       th Número Cartão
       th Responsável Loja
       th Valor
+      th 
     
   tbody
     - financial_transactions.each do |financial_transaction|
@@ -20,6 +21,6 @@ table class='table table-condensed'
         td = financial_transaction.social_security
         td = financial_transaction.card_number
         td = financial_transaction.store.owner
-        td class="debit-amount" 
-          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount}"
-    
+        td class="#{(financial_transaction.transaction_type.signal == "+") ? "amount-green" : "amount-red"}" 
+          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount_with_cents}"
+        td = link_to "Excluir", financial_transaction_path(financial_transaction), method: :delete, data: { confirm: 'Are you sure?' }

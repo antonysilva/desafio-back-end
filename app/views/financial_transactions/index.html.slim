@@ -1,5 +1,8 @@
-div class='container'
- 
-  h1 Financial Transacrion List
- 
+div.container
+  span.sign-out = link_to('Sign out', destroy_user_session_path, method: :delete)
+  h1 Financial Transaction 
+  = render partial: "uploads/new"
+
+  h3 Financial Transaction List
+  h4 Selecione uma loja para ter acesso ao saldo total
   = render partial: "list", locals: {financial_transactions: @financial_transactions}

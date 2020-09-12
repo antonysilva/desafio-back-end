@@ -13,4 +13,8 @@ class FinancialTransaction < ApplicationRecord
   def real_ammount
     instance_eval "#{self.transaction_type.signal}1 * #{self.amount}"
   end
+
+  def amount_with_cents
+    Utils::NumberUtil.new(self.amount).integer_to_money
+  end
 end

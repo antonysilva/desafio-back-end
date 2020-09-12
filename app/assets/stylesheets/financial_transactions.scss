@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "variables";
 
-.debit-amount{
+.amount-red{
   color: $page_red_color;
+}
+
+.amount-green{
+  color: $page_green_color;
 }

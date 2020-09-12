@@ -1,10 +1,10 @@
 class UploadsController < ApplicationController
-    def new
-    end
-
     def create
-        data_parsed = Parse::Files::ParseFile.new(purchase_params[:file], Parse::Models::CnabModel.get).parse if purchase_params[:file]
-        FinancialTransactionService::Create.new(data_parsed).execute
+        if purchase_params[:file].present?
+            data_parsed = Parse::Files::ParseFile.new(purchase_params[:file], Parse::Models::CnabModel.get).parse if purchase_params[:file]
+            FinancialTransactionService::Create.new(data_parsed).execute
+        end
+        redirect_to financial_transactions_path
     end
 
     private 

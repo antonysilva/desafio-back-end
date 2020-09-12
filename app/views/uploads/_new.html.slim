@@ -1,0 +1,8 @@
+h3 File Upload
+div.form-group
+  = form_tag uploads_path, method: :post, multipart: true do
+    div.field
+      = file_field_tag :file
+    div.actions
+      = submit_tag 'Confirm', class: 'btn btn-primary'
+ 

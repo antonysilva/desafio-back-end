@@ -4,6 +4,6 @@ div class='container'
 
   p Store: #{@store.name}
   p Owner: #{@store.owner}
-  p Total: #{@store.financial_transactions.map(&:real_ammount).reduce(:+)}
+  p.total-amount Total: #{@store.total_amount}
 
   = render partial: "list", locals: {financial_transactions: @store.financial_transactions}

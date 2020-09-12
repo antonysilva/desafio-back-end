@@ -1,4 +1,4 @@
-table class='table table-striped table-responsive'
+table cellspacing="0px" cellpadding="0px"
   thead
     tr
       th Tipo Transação
@@ -16,5 +16,5 @@ table class='table table-striped table-responsive'
         td = financial_transaction.transaction_time
         td = financial_transaction.social_security
         td = financial_transaction.card_number
-        td class="debit-amount" 
-          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount}"
+        td class="#{(financial_transaction.transaction_type.signal == "+") ? "amount-green" : "amount-red"}" 
+          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount_with_cents}"
