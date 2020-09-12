@@ -9,6 +9,26 @@ table cellspacing="0px" cellpadding="0px"
       th Valor
     
   tbody
+    tr
+      td
+        span.bolder-line Total
+      td
+      td
+      td
+      td
+      td
+        span.bolder-line 
+          = store.total_amount     
+
+    tr
+      td 
+        span.bolder-line Extrato Completo
+      td
+      td
+      td
+      td
+      td
+
     - financial_transactions.each do |financial_transaction|
       tr
         td = financial_transaction.transaction_type.name
@@ -17,4 +37,5 @@ table cellspacing="0px" cellpadding="0px"
         td = financial_transaction.social_security
         td = financial_transaction.card_number
         td class="#{(financial_transaction.transaction_type.signal == "+") ? "amount-green" : "amount-red"}" 
-          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount_with_cents}"
+          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount_with_cents}"     
+    

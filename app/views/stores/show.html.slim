@@ -1,7 +1,15 @@
-h1 Transacrion By Store List
+h1 
+  = t 'store_transaction'
 
-p Store: #{@store.name}
-p Owner: #{@store.owner}
-p.total-amount Total: #{@store.total_amount}
+p 
+  label
+    = t Store.human_attribute_name("name") 
+  <br />
+  = @store.name
+p 
+  label
+    = t Store.human_attribute_name("owner")
+  <br />  
+  = @store.owner
 
-= render partial: "list", locals: {financial_transactions: @store.financial_transactions}
+= render partial: "list", locals: {store: @store, financial_transactions: @store.financial_transactions}

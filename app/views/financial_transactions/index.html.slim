@@ -1,6 +1,8 @@
-h1 Financial Transaction 
+h1 
+  = t 'financial_transaction' 
 = render partial: "uploads/new"
 
-h3 Financial Transaction List
+h3 
+  = t 'financial_transaction_list'
 h4 Selecione uma loja para ter acesso ao saldo total
 = render partial: "list", locals: {financial_transactions: @financial_transactions}
