@@ -1,0 +1,21 @@
+$primary_color: #0066cc;
+$secondary_color: #fff;
+$page_red_color: #b30000;
+
+body {
+  background-color: $primary_color;
+}
+
+.container {
+  background-color: $secondary_color;
+
+    margin: {
+      left: 50px;
+      right: 50px;
+    };
+    
+    padding: {
+      left: 10px;
+      right: 10px;
+    };
+}

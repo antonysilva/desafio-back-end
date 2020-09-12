@@ -1,4 +1,4 @@
-class StoreDecorator < Draper::Decorator
+class StoreDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

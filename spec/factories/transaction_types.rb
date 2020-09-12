@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :transaction_type do
-        name {"Debito"}
+        name {"Boleto"}
         signal {"-"}
     end
 end

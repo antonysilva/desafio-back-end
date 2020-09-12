@@ -5,23 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-TransactionType.create([
-    {id: 1, name: "Débito", signal: "+"},
-    {id: 2, name: "Boleto", signal: "-"},
-    {id: 3, name: "Financiamento", signal: "-"},
-    {id: 4, name: "Recebimento Empréstimo", signal: "+"},
-    {id: 5, name: "Vendas", signal: "+"},
-    {id: 6, name: "Recebimento TED", signal: "+"},
-    {id: 7, name: "Recebimento DOC", signal: "+"},
-    {id: 8, name: "Aluguel", signal: "-"}
-]) 
+# TransactionType.create([
+#     {id: 1, name: "Débito", signal: "+"},
+#     {id: 2, name: "Boleto", signal: "-"},
+#     {id: 3, name: "Financiamento", signal: "-"},
+#     {id: 4, name: "Crédito", signal: "+"},
+#     {id: 5, name: "Recebimento Empréstimo", signal: "+"},
+#     {id: 6, name: "Vendas", signal: "+"},
+#     {id: 7, name: "Recebimento TED", signal: "+"},
+#     {id: 8, name: "Recebimento DOC", signal: "+"},
+#     {id: 9, name: "Aluguel", signal: "-"}
+# ]) 
 
-1		Entrada	+
-2		Saída	-
-3		Saída	-
-4		Entrada	+
-5		Entrada	+
-6		Entrada	+
-7		Entrada	+
-8		Entrada	+
-9		Saída	-
+# User.create(name: 'Sample User', email: 'sample_user@gmail.com', password: 'password')

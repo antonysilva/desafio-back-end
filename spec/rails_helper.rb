@@ -63,8 +63,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.formatter = :documentation
   config.include FactoryBot::Syntax::Methods
-#  config.include Devise::Test::ControllerHelpers, type: :controller
-#  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   config.before(:suite) do

@@ -1,0 +1,9 @@
+div class='container'
+ 
+  h1 Transacrion By Store List
+
+  p Store: #{@store.name}
+  p Owner: #{@store.owner}
+  p Total: #{@store.financial_transactions.map(&:real_ammount).reduce(:+)}
+
+  = render partial: "list", locals: {financial_transactions: @store.financial_transactions}

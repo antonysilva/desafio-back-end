@@ -46,10 +46,8 @@ RSpec.describe FinancialTransaction, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'Ammount should return money' do
+  it 'Real amount shuld be less then zero' do
     subject.amount = 267550
-    expect(subject.amount).to eq('2675,50'.to_d)
+    expect(subject.real_ammount).to eq('-267550'.to_i)
   end
-
-  
 end

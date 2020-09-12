@@ -1,0 +1,25 @@
+table class='table table-condensed'
+  thead
+    tr
+      th Nome Loja
+      th Tipo Transação
+      th Data Transação
+      th Hora Transação
+      th CPF
+      th Número Cartão
+      th Responsável Loja
+      th Valor
+    
+  tbody
+    - financial_transactions.each do |financial_transaction|
+      tr
+        td = link_to financial_transaction.store.name, store_path(financial_transaction.store)
+        td = financial_transaction.transaction_type.name
+        td = financial_transaction.transaction_date
+        td = financial_transaction.transaction_time
+        td = financial_transaction.social_security
+        td = financial_transaction.card_number
+        td = financial_transaction.store.owner
+        td class="debit-amount" 
+          = "#{financial_transaction.transaction_type.signal} #{financial_transaction.amount}"
+    

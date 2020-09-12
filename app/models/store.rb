@@ -5,5 +5,5 @@ class Store < ApplicationRecord
     validates_presence_of :name, :owner
     validates_uniqueness_of :name, scope: :owner
 
-    has_many :financial_transactions
+    has_many :financial_transactions, dependent: :destroy
 end
