@@ -18,7 +18,7 @@ Esta é uma aplicação Rails cuja funcionalidade é permitir que o usuário pos
 * create a `.env.development` file similar to `.env.example` and add the credentials of your facebook application;
 * run the `rspec` command to run the test suite;
 * run the `rails s` command to start the application server;
-
+* The file upload name is CNAB.txt and it is present on root
 ----------
 
 # Desafio programação - para vaga Back-end
